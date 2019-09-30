@@ -1,10 +1,15 @@
 
-a = []   #list
+phrase = input("Please enter simple phrase: ")
+print("Entered phrase: ", phrase)
 
-a = [1, 'str', [1, 2]]
+#list_word = phrase.split()
 
-for elem in a:
-    print(elem)
+
+newPhrase = ''
+for i in phrase:
+    if i not in newPhrase and (i != ' '):
+        newPhrase += i
+print(newPhrase)
 
 
 

@@ -24,6 +24,7 @@ for word in list_word:
 
 i = 0
 while i < len(list_word):
+
     print(list_word[i], end=' \n')
     i += 1
 
@@ -34,3 +35,23 @@ for i in range(1, len(list_word)):
 
 print('long word/words: ', list_word[long_word])
 print("length of word: ", len(list_word[long_word]))
+
+# task2: Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы.
+# Например, если было введено "abc cde def", то должно быть выведено "abcdef".
+
+phrase = input("Please enter simple phrase: ")
+print("Entered phrase: ", phrase)
+
+# list_word = phrase.split()
+
+
+newPhrase = ''
+for i in phrase:
+    if i not in newPhrase and (i != ' '):
+        newPhrase += i
+print(newPhrase)
+
+
+
+
+
