@@ -51,6 +51,25 @@ for i in phrase:
         newPhrase += i
 print(newPhrase)
 
+# Посчитать количество строчных (маленьких) и прописных
+# (больших) букв в введенной строке. Учитывать только английские буквы.
+
+phrase = input("Please enter simple phrase: ")
+print("Entered phrase: ", phrase)
+
+
+m = 0
+u = 0
+for i in phrase:
+    if 'a' <= i <= 'z':
+        m += 1
+    elif 'A' <= i <= 'Z':
+        u += 1
+    else:
+        pass
+
+print("Number of lower letter: ", m, end="\n")
+print("Number of upper letter: ", u, end="\n")
 
 
 
