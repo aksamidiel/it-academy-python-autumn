@@ -1,43 +1,36 @@
 # Найти самое длинное слово в введенном предложении. Учтите что в предложении есть знаки препинания
 
-fraz = input("Please enter some frases: ")
+phrase = input("Please enter some phrase with signs separated by space: ")
 
-print("Entered frazes: ", fraz)
+print("Entered phrase: ", phrase)
 
-list_word = fraz.split()
-list_word.
-print(len(list_word))
-for k in range(len(list_word)):
-    for m in list_word[k]:
-        if m == "," or m == "!" or m == "/" or m == ".":
+# out = "".join(k for k in phrase if k not in('!', '.', ','))
+# print(out)
 
-            list_word[k] = list_word[k].replace(m, " ")
-            list_word.append(list_word[k])
-    #list_word
-    print(str(list_word[k]))
+signs = ['.', ',', ':', ';', '!', '?', '(', ')',
+         ' .', ' ,', ' :', ' ;', ' !', ' ?', ' (', ' )',
+         '. ', ', ', ': ', '; ', '! ', '? ', '( ', ') ']
+list_word = phrase.split()
+i = 0
 
-    #list_word += list_word[k].split()
-list_word = str(list_word).split()
-print(list_word)
-print(len(list_word))
-
-
-
-     #print(list_word[k].replace(',', ''))
-
-#for j in range(1, len(list_word)):
-   #for k in list_word[j]:
-      #  if k == ',':
-        #    list_word[j].replace(',', '')
+for word in list_word:
+    if word[-1] in signs:
+        list_word[i] = word[:-1]
+        word = list_word[i]
+    if word[0] in signs:
+        list_word[i] = word[1:]
+    i += 1
 
 
-
-
-
+i = 0
+while i < len(list_word):
+    print(list_word[i], end=' \n')
+    i += 1
 
 long_word = 0
 for i in range(1, len(list_word)):
     if len(list_word[long_word]) < len(list_word[i]):
         long_word = i
 
-print(list_word[long_word])
+print('long word/words: ', list_word[long_word])
+print("length of word: ", len(list_word[long_word]))
