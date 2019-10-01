@@ -19,14 +19,14 @@ print('Our cost: rub - {} coins - {} '.format(rub_our, coin_our))
 
 # task_palindrome
 number = input('Enter number: ')
-n = number[::-1] #переворот чтение введенного с последнего символа <----
+n = number[::-1]  # переворот чтение введенного с последнего символа <----
 if number == n:
   print("yes, this is palindrome")
 else:
   print("no, this is not palindrome")
 
 # task_fibonnachi
-# fibbonachi start to 1
+# fibonachi start to 1
 # ряд фиббоначи начинается с 1
 num1 = num2 = 1
 
