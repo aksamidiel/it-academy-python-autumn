@@ -28,3 +28,12 @@ for ls in lst:   # цикл вывода
 
 # for j in range(first_position, last_position):
 #    print("Result: ", lst[j])
+
+# 2. Use a list comprehension to construct the
+# list ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
+
+print("create list with list comprehension ")
+n = int(input("Enter number of range: "))
+
+lst_1 = [[a, b] for a in range(n) for b in range(n)]
+print("Result: ", lst_1)
