@@ -1,4 +1,4 @@
-# Write a program that prints the numbers from 1 to 100
+# 1. Write a program that prints the numbers from 1 to 100
 # but for multiples of three print “Fizz” instead of the
 # number and for multiples of five print “Buzz”.
 # For numbers which are multiples of both three and five,
@@ -69,7 +69,7 @@ print(flat_list_2.pop(1))
 # back into the list such that the
 # original is still missing it.
 
-print("velcom back")
+print("Welcome back")
 print(flat_list_2)
 flat_list_3 = flat_list_2.copy()
 
