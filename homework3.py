@@ -1,4 +1,5 @@
-# Найти самое длинное слово в введенном предложении. Учтите что в предложении есть знаки препинания
+# Найти самое длинное слово в введенном предложении.
+# Учтите что в предложении есть знаки препинания
 phrase = input("Please enter some phrase with signs separated by space: ")
 
 print("Entered phrase: ", phrase)
@@ -34,8 +35,10 @@ for i in range(1, len(list_word)):
 print('long word/words: ', list_word[long_word])
 print("length of word: ", len(list_word[long_word]))
 
-# task2: Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы.
-# Например, если было введено "abc cde def", то должно быть выведено "abcdef".
+# task2: Вводится строка. Требуется удалить из нее
+# повторяющиеся символы и все пробелы.
+# Например, если было введено "abc cde def",
+# то должно быть выведено "abcdef".
 
 phrase = input("Please enter simple phrase: ")
 print("Entered phrase: ", phrase)
