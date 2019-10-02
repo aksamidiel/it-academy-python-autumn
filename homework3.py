@@ -1,5 +1,4 @@
 # Найти самое длинное слово в введенном предложении. Учтите что в предложении есть знаки препинания
-
 phrase = input("Please enter some phrase with signs separated by space: ")
 
 print("Entered phrase: ", phrase)
@@ -20,7 +19,6 @@ for word in list_word:
     if word[0] in signs:
         list_word[i] = word[1:]
     i += 1
-
 
 i = 0
 while i < len(list_word):
@@ -44,7 +42,6 @@ print("Entered phrase: ", phrase)
 
 # list_word = phrase.split()
 
-
 newPhrase = ''
 for i in phrase:
     if i not in newPhrase and (i != ' '):
@@ -56,7 +53,6 @@ print(newPhrase)
 
 phrase = input("Please enter simple phrase: ")
 print("Entered phrase: ", phrase)
-
 
 m = 0
 u = 0
@@ -70,7 +66,3 @@ for i in phrase:
 
 print("Number of lower letter: ", m, end="\n")
 print("Number of upper letter: ", u, end="\n")
-
-
-
-
