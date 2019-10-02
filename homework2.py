@@ -9,7 +9,6 @@ coin_our = coins * number_of_items
 if coin_our >= 100:
     rub_our += coin_our // 100
     coin_our = coin_our % 100
-
 print('Our cost: rub - {} coins - {} '.format(rub_our, coin_our))
 
 # task_palindrome
@@ -27,7 +26,7 @@ num1 = num2 = 1
 
 n = int(input("Enter number of Fibonacci: "))
 i = 0
-while i < n-2:
+while i < n - 2:
     fib = num1 + num2
     num1 = num2
     num2 = fib
