@@ -36,5 +36,3 @@ print("lst_3: ", lst_3)
 tpl_2 = tuple([lst_3], )
 print("length tuple: ", len(tpl_2))
 print("tuple: ", tpl_2)
-
-
