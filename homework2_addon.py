@@ -36,6 +36,7 @@ print(dec_list)
 for j in range(len(dec_list) - 1):
     if dec_list[j] < dec_list[j + 1]:
         dec_list[j] = dec_list[j] * (-1)
+
 s = 0
 for i in dec_list:
     s += i
