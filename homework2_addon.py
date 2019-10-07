@@ -49,7 +49,6 @@ print("Number in dec system: ", s)
 # plus, minus, multiply, divide для,
 # соответственно, сложения, вычитания,
 # умножения и целочисленного деления.
-
 some_expression = str(input("Enter some simple expression: [a operator b]"))
 exp_list = some_expression.split(' ')
 i = 0
