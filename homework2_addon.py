@@ -1,4 +1,14 @@
-# stepik tasks
+
+# stepic.org tasks
+#
+# нужно написать программу, которая считывает строку и заменяет
+# в ней группы пробельных символов на символ подчёркивания.
+
+some_simple_string = input("Enter some string: ").replace(' ', '_')
+while "__" in some_simple_string:
+    some_simple_string = some_simple_string.replace('__', '_')
+print(some_simple_string)
+
 # В римской системе счисления для обозначения чисел используются следующие символы
 # (справа записаны числа, которым они соответствуют в десятичной системе счисления):
 #
@@ -22,11 +32,10 @@ print(dec_list)
 for j in range(len(dec_list) - 1):
     if dec_list[j] < dec_list[j + 1]:
         dec_list[j] = dec_list[j] * (-1)
-
-sum = 0
+summ = 0
 for i in dec_list:
-    sum += i
-print("Number in dec system: ", sum)
+    summ += i
+print("Number in dec system: ", summ)
 
 # Напишите простой интерпретатор математического выражения.
 #
@@ -56,5 +65,34 @@ elif operator == 'divide':
 else:
     res = "Bad operation"
 print("Result: ", res)
+
+# напишите программу, которая переводит имена переменных из стиля написания underscore в стиль UpperCamelCase.
+#
+# Стиль underscore характеризуется тем, что слова в имени пишутся маленькими буквами
+# и разделяются между собой символом подчёркивания "_". Стиль UpperCamelCase означает,
+# что каждое слово пишется с большой буквы и разделителей между словами нет.
+#
+text = input("Enter some text: ").split("_")
+buf_text = ""
+for i in text:
+    v = i[0].upper()+i[1:]
+    buf_text += v
+print(buf_text)
+
+# Программа должна выводить
+# для каждого уникального слова
+# число его повторений (без учёта регистра).
+
+some_str = input("Enter some text: ").lower().split(" ")
+list_buf = []
+dict_buf = {}
+for i in some_str:
+    if i not in list_buf:
+        list_buf.append(i)
+        dict_buf[i] = 1
+    else:
+        dict_buf[i] += 1
+for i in range(len(list_buf)):
+    print(list_buf[i]+" "+str(dict_buf[list_buf[i]]))
 
 
