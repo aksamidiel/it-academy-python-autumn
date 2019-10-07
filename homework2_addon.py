@@ -32,10 +32,10 @@ print(dec_list)
 for j in range(len(dec_list) - 1):
     if dec_list[j] < dec_list[j + 1]:
         dec_list[j] = dec_list[j] * (-1)
-summ = 0
+s = 0
 for i in dec_list:
-    summ += i
-print("Number in dec system: ", summ)
+    s += i
+print("Number in dec system: ", s)
 
 # Напишите простой интерпретатор математического выражения.
 #
@@ -80,7 +80,7 @@ print("Result: ", res)
 text = input("Enter some text: ").split("_")
 buf_text = ""
 for i in text:
-    v = i[0].upper()+i[1:]
+    v = i[0].upper() + i[1:]
     buf_text += v
 print(buf_text)
 
