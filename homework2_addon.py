@@ -39,9 +39,12 @@ print("Number in dec system: ", summ)
 
 # Напишите простой интерпретатор математического выражения.
 #
-# На вход подаётся строка с выражением, состоящим из двух чисел, объединённых бинарным оператором:
+# На вход подаётся строка с выражением,
+# состоящим из двух чисел, объединённых бинарным оператором:
 # a operator b, где вместо operator могут использоваться следующие слова:
-# plus, minus, multiply, divide для, соответственно, сложения, вычитания, умножения и целочисленного деления.
+# plus, minus, multiply, divide для,
+# соответственно, сложения, вычитания,
+# умножения и целочисленного деления.
 
 some_expression = str(input("Enter some simple expression: [a operator b]"))
 exp_list = some_expression.split(' ')
@@ -66,12 +69,14 @@ else:
     res = "Bad operation"
 print("Result: ", res)
 
-# напишите программу, которая переводит имена переменных из стиля написания underscore в стиль UpperCamelCase.
+# напишите программу, которая переводит имена
+# переменных из стиля написания underscore в стиль UpperCamelCase.
 #
 # Стиль underscore характеризуется тем, что слова в имени пишутся маленькими буквами
 # и разделяются между собой символом подчёркивания "_". Стиль UpperCamelCase означает,
 # что каждое слово пишется с большой буквы и разделителей между словами нет.
 #
+
 text = input("Enter some text: ").split("_")
 buf_text = ""
 for i in text:
@@ -93,6 +98,4 @@ for i in some_str:
     else:
         dict_buf[i] += 1
 for i in range(len(list_buf)):
-    print(list_buf[i]+" "+str(dict_buf[list_buf[i]]))
-
-
+    print(list_buf[i] + " " + str(dict_buf[list_buf[i]]))
