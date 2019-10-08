@@ -6,8 +6,9 @@ coins = int(input('Enter cost in coins(please use whole number <100 : '))
 number_of_items = int(input("Input number of item: "))
 
 if coins * number_of_items >= 100:
-    rub = rub * number_of_items + (coins * number_of_items) // 100   # число рублей с учетом монет
-    coins = (coins * number_of_items) % 100          # остаток монеток
+    rub = rub * number_of_items \
+          + (coins * number_of_items) // 100  # число рублей с учетом монет
+    coins = (coins * number_of_items) % 100  # остаток монеток
 else:
     rub = rub * number_of_items
     coins = coins * number_of_items
@@ -42,6 +43,3 @@ while i < n - 2:
     num2 = fib
     i += 1
 print(num2)
-
-
-
