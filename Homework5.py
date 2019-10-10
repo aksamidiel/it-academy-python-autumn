@@ -32,4 +32,19 @@ print(some_string)
 dict_res = dict((ch, some_string.count(ch)) for ch in set(some_string))
 print("Result", dict_res)
 
+# Задача. Дан текст (строк может быть много, разделенных \n).
+# Выведите слово, которое в этом тексте встречается чаще всего.
+# Если таких слов несколько, выведите то, которое меньше в
+# лексикографическом порядке.
+
+some_text = input("Enter some text: ").split()
+print(some_text)
+
+some_text = [line.rstrip() for line in some_text]
+dict_res = dict((word, some_text.count(word)) for word in set(some_text))
+print(dict_res)
+
+sort_res = sorted(dict_res.items(), key=lambda i: (-i[1], i[0]))[0]   # tuple
+print("Result sorted: ", sort_res[0])
+
 

@@ -1,13 +1,24 @@
-res = []
-some_text = input("Enter some text: ").split()
-print(some_text)
-for st in some_text:
-    print(st)
-    res += st.rstrip('/n')
-print(res)
+#  Задача Дан список стран и городов каждой страны.
+#  Затем даны названия городов. Для каждого города укажите,
+#  в какой стране он находится.
+num_countries = int(input("Enter № country: "))
+dict_countries = {}
 
-#print(some_text)
+for i in range(num_countries):
+    (country, *city) = input("Enter the country, and located cities: ").split()
 
-dict_res = dict((word, res.count(word)) for word in set(res))
+    for j in city:
+        dict_countries[j] = country
+print(dict_countries)
 
-print(dict_res)
+num_city = int(input("Enter number of cities: "))
+list_city = []
+print("Cities: ")
+for i in range(num_city):
+    list_city.append(input("Enter n city: "))
+for i in list_city:
+    print(dict_countries.get(i, "Not in database"))
+
+
+
+
