@@ -47,4 +47,19 @@ print(dict_res)
 sort_res = sorted(dict_res.items(), key=lambda i: (-i[1], i[0]))[0]   # tuple
 print("Result sorted: ", sort_res[0])
 
+# Даны два списка чисел.
+# Посчитайте, сколько чисел содержится одновременно
+# как в первом списке, так и во втором.
 
+list_l1 = input("Enter list of numbers 1: ")
+list_l2 = input("Enter list of numbers 2: ")
+
+set_list_l1 = set(list_l1)
+set_list_l2 = set(list_l2)
+
+print("the number of numbers found in both: ", len(set_list_l1 & set_list_l2))
+
+# Даны два списка чисел. Посчитайте,
+# сколько чисел входит только в один из этих списков.
+
+print("the number of numbers in the list: ", len(set_list_l1 ^ set_list_l2))
