@@ -10,7 +10,7 @@ last_position = int(input("Please enter last position: "))
 lst = []
 for i in range(first_position, last_position):
 
-    if i % 3 == 0 and i % 5 == 0:
+    if i % 15:
         lst.append('FizzBuzz')
 
     elif i % 3 == 0:
@@ -24,13 +24,6 @@ index = 0
 for ls in lst:   # цикл вывода
     print(lst[index], end=", ")
     index += 1
-
-# for j in range(first_position, last_position):
-#    print("Result: ", lst[j])
-
-# 2. Use a list comprehension to construct the
-# list ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
-
 print("create list with list comprehension ")
 n = int(input("Enter number of range: "))
 
@@ -41,18 +34,14 @@ print("Result: ", lst_1)
 # list ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
 
 print("create list with list comprehension ")
-# n = int(input("Enter number of range: "))
 
-lst_1 = [[a + b] for a in 'abcd' if 'a' <= a <= 'd'
-         for b in 'abcd' if 'b' <= b <= 'd']
+lst_1 = [a + b for a in ['a', 'b'] for b in ['b', 'c', 'd']]
 print("Result: ", lst_1)
-
-flat_list = [item for sublist in lst_1 for item in sublist][:6]
-print(flat_list)
 
 # 3. Use a slice on the above list to construct the
 # list ['ab', 'ad', 'bc'].
-print(flat_list[0::2])
+lst_2 = lst_1[::2]
+print(lst_2)
 
 # 4. Use a list comprehension to construct the list ['1a', '2a', '3a', '4a']
 
@@ -84,9 +73,7 @@ print(flat_list_3)
 # Create the list ['a', 'b', 'c'], then create a tuple from that list
 
 print("Create list: ")
-lst = [i for i in input("Enter a, b, c or other symbols "
-                        "without spaces or symbols of punctuation: ")]
-
+lst = ['a', 'b', 'c']
 print(lst)
 
 # Create the tuple ('a', 'b', 'c'),
@@ -104,7 +91,7 @@ print(lst_1)
 # Make the following instantiations simultaneously:
 # a = 'a', b=2, c='gamma'. (That is, in one line of code)
 
-a, b, c = ('a', 2, 'gamma')
+a, b, c = 'a', 2, 'gamma'
 print((a, b, c))
 
 # Create a tuple containing just a single element which in
@@ -115,6 +102,6 @@ print("Create one - element tuple: ")
 lst_3 = [k for k in input("enter some symbols: ")]
 print(type(lst_3))
 print("lst_3: ", lst_3)
-tpl_2 = tuple([lst_3], )
+tpl_2 = tuple(lst_3, )
 print("length tuple: ", len(tpl_2))
 print("tuple: ", tpl_2)
