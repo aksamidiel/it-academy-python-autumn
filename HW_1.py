@@ -1,16 +1,23 @@
 # Homework6
+def inp_call():
+    rub = int(input('Enter cost in rub(please use whole number: '))
+    coins = int(input('Enter cost in coins(please use whole number <100 : '))
+    number_of_items = int(input("Input number of item: "))
 
-def calc(n, r, c):
-    if c * n >= 100:
-        # число рублей с учетом монет
-        r = r * n + (c * n) // 100
-        # остаток монеток
-        c = (c * n) % 100
-    else:
-        r = r * n
-        c = c * n
 
-    return 'Our cost: rub = {}  coins = {}'.format(r, c)
+    def calc(n, r, c):
+        if c * n >= 100:
+            # число рублей с учетом монет
+            r = r * n + (c * n) // 100
+            # остаток монеток
+            c = (c * n) % 100
+        else:
+            r = r * n
+            c = c * n
+
+        return 'Our cost: rub = {}  coins = {}'.format(r, c)
+
+    print(calc(rub, coins, number_of_items))
 
 
 # task v.2
