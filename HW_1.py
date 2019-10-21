@@ -1,9 +1,8 @@
 # Homework6
-def inp_call():
+def input_calculate():
     rub = int(input('Enter cost in rub(please use whole number: '))
     coins = int(input('Enter cost in coins(please use whole number <100 : '))
     number_of_items = int(input("Input number of item: "))
-
 
     def calc(n, r, c):
         if c * n >= 100:
@@ -21,31 +20,38 @@ def inp_call():
 
 
 # task v.2
-def is_pal(s_n):
-    temp = s_n
-    reverse = 0
-    while s_n > 0:
-        digit = s_n % 10
-        reverse = reverse * 10 + digit
-        s_n = s_n // 10
+def input_palindrome():
+    some_number = int(input("Enter some number: "))
 
-    if temp == reverse:
-        return "This number is palindrome: {s_n}".format(s_n)
-    else:
-        return "This number is not palindrome: {s_n}".format(s_n)
+    def is_pal(s_n):
+        temp = s_n
+        reverse = 0
+        while s_n > 0:
+            digit = s_n % 10
+            reverse = reverse * 10 + digit
+            s_n = s_n // 10
 
+        if temp == reverse:
+            return "This number is palindrome: {}".format(s_n)
+        else:
+            return "This number is not palindrome: {}".format(s_n)
 
+    print(is_pal(some_number))
 
 
 # task_fibonacci
 # fibonacci start to 1
 # ряд фиббоначи начинается с 1
-def is_fib(number):
-    num1 = num2 = 1
-    i = 0
-    while i < number - 2:
-        fib = num1 + num2
-        num1 = num2
-        num2 = fib
-        i += 1
-    return "Number of Fibonacci: {num2}".format(num2)
+def input_fib():
+    n = int(input("Enter number of Fibonacci: "))
+
+    def is_fib(number):
+        num1 = num2 = 1
+        i = 0
+        while i < number - 2:
+            fib = num1 + num2
+            num1 = num2
+            num2 = fib
+            i += 1
+        return "Number of Fibonacci: {}".format(num2)
+    print(is_fib(n))
