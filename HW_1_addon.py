@@ -12,8 +12,6 @@ def s_str(some_str):
     return "This string is: {some_str}".format(some_str)
 
 
-s_str(some_simple_string)
-
 # В римской системе счисления для обозначения
 # чисел используются следующие символы
 # (справа записаны числа, которым они соответствуют
@@ -50,8 +48,6 @@ def roma_func(some_string):
         some_string += j
     return "Number in dec system: {some_string}".format(some_string)
 
-
-roma_func(s)
 
 # Напишите простой интерпретатор математического выражения.
 #
@@ -112,14 +108,11 @@ def text_converter(txt):
     return buf_text
 
 
-text_converter(text)
-
 # Программа должна выводить
 # для каждого уникального слова
 # число его повторений (без учёта регистра).
 
 some_str = input("Enter some text: ")
-
 
 def rep_word(s_st):
     s_st.lower().split(" ")

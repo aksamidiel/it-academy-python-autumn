@@ -1,18 +1,25 @@
-some_str = input("Enter some text: ")
 
 
-def rep_word(s_st):
-    s_st.lower().split(" ")
-    list_buf = []
-    dict_buf = {}
-    for i in s_st:
-        if i not in list_buf:
-            list_buf.append(i)
-            dict_buf[i] = 1
-        else:
-            dict_buf[i] += 1
-    for i in range(len(list_buf)):
-        print(list_buf[i] + " " + str(dict_buf[list_buf[i]]))
 
-rep_word(some_str)
+def decorator_with_arguments(func_to_decorate):
+    def wrapper_accepting(*args, **kwargs):
+        print("parameters: args{}  kwargs{}", args, kwargs)
+        func_to_decorate(*args, **kwargs)
+    return wrapper_accepting
+
+@decorator_with_arguments
+def function_without_arg():
+    print("without argument's")
+
+function_without_arg()
+
+@decorator_with_arguments
+def function_with_arg(a, b, c):
+    print(a, b, c)
+
+function_with_arg(5, 4, 3)
+
+
+
+
 
