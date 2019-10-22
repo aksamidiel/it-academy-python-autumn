@@ -1,3 +1,10 @@
+# 1. Write a program that prints the numbers from 1 to 100
+# but for multiples of three print “Fizz” instead of the
+# number and for multiples of five print “Buzz”.
+# For numbers which are multiples of both three and five,
+# print “FizzBuzz”
+
+
 def sm_print():
     first_position = int(input("Please enter first position: "))
     last_position = int(input("Please enter last position: "))
@@ -27,6 +34,18 @@ def sm_print():
         return "Result: {}".format(lst_1)
 
     print(smart_printer(first_position, last_position))
+
+# 2. Use a list comprehension to construct the
+# list ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
+# 3. Use a slice on the above list to construct the
+# list ['ab', 'ad', 'bc'].
+# 4. Use a list comprehension to construct the list ['1a', '2a', '3a', '4a']
+# 5. Simultaneously remove the element '2a'
+# from the above list and print it.
+# 6. Copy the above list and add '2a'
+# back into the list such that the
+# original is still missing it.
+
 
 
 def test_list_comp():

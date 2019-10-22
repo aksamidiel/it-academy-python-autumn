@@ -1,3 +1,6 @@
+# Найти самое длинное слово в введенном предложении.
+# Учтите что в предложении есть знаки препинания
+
 def long_word():
     phrase = input("Please enter some phrase with signs separated by space: ")
 
@@ -21,6 +24,11 @@ def long_word():
     print(l_word(phrase))
 
 
+# task2: Вводится строка. Требуется удалить из нее
+# повторяющиеся символы и все пробелы.
+# Например, если было введено "abc cde def",
+# то должно быть выведено "abcdef".
+
 def sym_deleter():
     phrase = input("Please enter simple phrase: ")
 
@@ -33,6 +41,9 @@ def sym_deleter():
 
     print(space_sym_deleter(phrase))
 
+
+# Посчитать количество строчных (маленьких) и прописных
+# (больших) букв в введенной строке. Учитывать только английские буквы.
 
 def up_low():
     phrase = input("Please enter simple phrase: ")

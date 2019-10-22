@@ -1,3 +1,10 @@
+# task_1
+# Define a dict comprehension which returns a dictionary where
+# the keys are numbers between 1 and n (both included)
+# and the values are square of keys.
+# n – function argument. Default is 20.
+
+
 def range_calc():
     while True:
         try:
@@ -17,6 +24,10 @@ def range_calc():
     res = dict_cons(n)
     return "Result: {}".format(res)
 
+# task_1.2
+# Define a code which count and return
+# the numbers of each character in a count_me_string argument.
+
 
 def simple_dict_const():
     some_string = input("Enter some string: ")
@@ -26,6 +37,11 @@ def simple_dict_const():
         return "Result: {}".format(dict_res)
 
     print(dict_const(some_string))
+
+# Задача. Дан текст (строк может быть много, разделенных \n).
+# Выведите слово, которое в этом тексте встречается чаще всего.
+# Если таких слов несколько, выведите то, которое меньше в
+# лексикографическом порядке.
 
 
 def spl_search():
@@ -41,6 +57,10 @@ def spl_search():
 
     search_num_word(some_text)
 
+# Даны два списка чисел.
+# Посчитайте, сколько чисел содержится одновременно
+# как в первом списке, так и во втором.
+
 
 def tw_l():
     list_l1 = input("Enter list of numbers 1: ")
@@ -53,6 +73,9 @@ def tw_l():
         return "the number of numbers found in both: {}".format(l)
 
     print(two_list(list_l1, list_l2))
+
+# Даны два списка чисел. Посчитайте,
+# сколько чисел входит только в один из этих списков.
 
 
 def tw_dif():

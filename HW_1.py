@@ -1,4 +1,16 @@
 # Homework6
+# task_1
+
+
+def save_func(dec_fun):
+    def wrapper():
+        with open("save_fun", "a") as f_obj:
+            f_obj.write(dec_fun())
+
+    return wrapper
+
+
+@save_func
 def input_calculate():
     rub = int(input('Enter cost in rub(please use whole number: '))
     coins = int(input('Enter cost in coins(please use whole number <100 : '))
