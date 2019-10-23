@@ -1,21 +1,25 @@
 # Homework6
 # task_1
-
+from datetime import datetime
 
 def save_func(dec_fun):
-    def wrapper():
-        with open("save_fun", "a") as f_obj:
-            f_obj.write(dec_fun())
+    def wrapper(*args, **kwargs):
+        return_inf = dec_fun(*args, **kwargs)
+        with open("save_fun.txt", "a") as f_obj:
+            f_obj.write(return_inf+"\n")
+        now = datetime.utcnow()
 
+        print(return_inf)
     return wrapper
 
 
-@save_func
 def input_calculate():
     rub = int(input('Enter cost in rub(please use whole number: '))
     coins = int(input('Enter cost in coins(please use whole number <100 : '))
     number_of_items = int(input("Input number of item: "))
+    print("[Хочешь мамочку? Бери.]")
 
+    @save_func
     def calc(n, r, c):
         if c * n >= 100:
             # число рублей с учетом монет
@@ -26,7 +30,7 @@ def input_calculate():
             r = r * n
             c = c * n
 
-        return 'Our cost: rub = {}  coins = {}'.format(r, c)
+        return 'Our cost: rub = {}  coins = {} item = {}'.format(r, c, n)
 
     print(calc(rub, coins, number_of_items))
 

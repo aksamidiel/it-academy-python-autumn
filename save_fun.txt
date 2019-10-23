@@ -1,0 +1,4 @@
+Our cost: rub = 4  coins = 4 item = 2Our cost: rub = 6  coins = 6 item = 3Our cost: rub = 4  coins = 4 item = 2
+Our cost: rub = 4  coins = 4 item = 2
+Our cost: rub = 12  coins = 15 item = 3
+Our cost: rub = 20  coins = 24 item = 4
