@@ -1,14 +1,14 @@
 # Homework6
 # task_1
 from datetime import datetime
+import locale
+locale.setlocale(locale.LC_ALL, "ru")
 
 def save_func(dec_fun):
     def wrapper(*args, **kwargs):
         return_inf = dec_fun(*args, **kwargs)
         with open("save_fun.txt", "a") as f_obj:
-            f_obj.write(return_inf+"\n")
-        now = datetime.utcnow()
-
+            f_obj.write(str(datetime.now()) + "\n" + return_inf+"\n")
         print(return_inf)
     return wrapper
 
@@ -17,7 +17,6 @@ def input_calculate():
     rub = int(input('Enter cost in rub(please use whole number: '))
     coins = int(input('Enter cost in coins(please use whole number <100 : '))
     number_of_items = int(input("Input number of item: "))
-    print("[Хочешь мамочку? Бери.]")
 
     @save_func
     def calc(n, r, c):
@@ -38,7 +37,7 @@ def input_calculate():
 # task v.2
 def input_palindrome():
     some_number = int(input("Enter some number: "))
-
+    @save_func
     def is_pal(s_n):
         temp = s_n
         reverse = 0
@@ -48,9 +47,9 @@ def input_palindrome():
             s_n = s_n // 10
 
         if temp == reverse:
-            return "This number is palindrome: {}".format(s_n)
+            return 'This number is palindrome: {}'.format(temp)
         else:
-            return "This number is not palindrome: {}".format(s_n)
+            return 'This number is not palindrome: {}'.format(temp)
 
     print(is_pal(some_number))
 
@@ -60,7 +59,7 @@ def input_palindrome():
 # ряд фиббоначи начинается с 1
 def input_fib():
     n = int(input("Enter number of Fibonacci: "))
-
+    @save_func
     def is_fib(number):
         num1 = num2 = 1
         i = 0

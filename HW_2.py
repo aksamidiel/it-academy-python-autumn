@@ -1,11 +1,24 @@
+from datetime import datetime
+import locale
+locale.setlocale(locale.LC_ALL, "ru")
+
+def save_func(dec_fun):
+    def wrapper(*args, **kwargs):
+        return_inf = dec_fun(*args, **kwargs)
+        with open("save_fun.txt", "a") as f_obj:
+            f_obj.write(str(datetime.now()) + "\n" + return_inf+"\n")
+        print(return_inf)
+    return wrapper
+
+
 # Найти самое длинное слово в введенном предложении.
 # Учтите что в предложении есть знаки препинания
 
 def long_word():
     phrase = input("Please enter some phrase with signs separated by space: ")
-
+    @save_func
     def l_word(ph):
-
+        word = ''
         print("Entered phrase: ", ph)
         signs = '.,/:;&^%$#@!><+=_-*'
         for j in signs:  # поиск и замена символов
@@ -13,7 +26,6 @@ def long_word():
 
         list_word = ph.split()
         length_some_word = len(list_word[-1])
-        word = ''
         for i in range(1, len(list_word)):
             if length_some_word < len(list_word[i]):
                 length_some_word = len(list_word[i])
@@ -31,7 +43,7 @@ def long_word():
 
 def sym_deleter():
     phrase = input("Please enter simple phrase: ")
-
+    @save_func
     def space_sym_deleter(ph):
         newPhrase = ''
         for i in ph:
@@ -47,7 +59,7 @@ def sym_deleter():
 
 def up_low():
     phrase = input("Please enter simple phrase: ")
-
+    @save_func
     def up_lo_letter(ph):
         m = 0
         u = 0

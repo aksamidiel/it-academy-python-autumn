@@ -1,10 +1,23 @@
+from datetime import datetime
+import locale
+locale.setlocale(locale.LC_ALL, "ru")
+
+def save_func(dec_fun):
+    def wrapper(*args, **kwargs):
+        return_inf = dec_fun(*args, **kwargs)
+        with open("save_fun.txt", "a") as f_obj:
+            f_obj.write(str(datetime.now()) + "\n" + return_inf+"\n")
+        print(return_inf)
+    return wrapper
+
+
 # task_1
 # Define a dict comprehension which returns a dictionary where
 # the keys are numbers between 1 and n (both included)
 # and the values are square of keys.
 # n – function argument. Default is 20.
 
-
+@save_func
 def range_calc():
     while True:
         try:
@@ -16,6 +29,7 @@ def range_calc():
         else:
             print("Try input")
             break
+
 
     def dict_cons(n):
         dic_ = {x: x * x for x in range(1, n + 1)}
@@ -32,6 +46,7 @@ def range_calc():
 def simple_dict_const():
     some_string = input("Enter some string: ")
 
+    @save_func
     def dict_const(some_str):
         dict_res = dict((ch, some_str.count(ch)) for ch in set(some_str))
         return "Result: {}".format(dict_res)
@@ -46,7 +61,7 @@ def simple_dict_const():
 
 def spl_search():
     some_text = input("Enter some text: ").split()
-
+    @save_func
     def search_num_word(s_t):
         s_t = [line.rstrip() for line in s_t]
         dict_res = dict((word, some_text.count(word)) for word in set(s_t))
@@ -65,7 +80,7 @@ def spl_search():
 def tw_l():
     list_l1 = input("Enter list of numbers 1: ")
     list_l2 = input("Enter list of numbers 2: ")
-
+    @save_func
     def two_list(l1, l2):
         et_list_l1 = set(l1)
         set_list_l2 = set(l2)
@@ -81,7 +96,7 @@ def tw_l():
 def tw_dif():
     list_l1 = input("Enter list of numbers 1: ")
     list_l2 = input("Enter list of numbers 2: ")
-
+    @save_func
     def two_list_dif(l1, l2):
         et_list_l1 = set(l1)
         set_list_l2 = set(l2)

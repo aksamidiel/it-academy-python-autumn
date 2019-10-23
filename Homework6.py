@@ -3,7 +3,7 @@ import Run_1, Run_2, Run_3
 # runner() – все фукнции вызываются по очереди
 # runner(‘gen_numbers’) – вызывается только функцию gen_numbers.
 # runner(‘func’, ‘func1’...) - вызывает все переданные функции
-Run_1.runner_1()
+#un_1.runner_1()
 n = input("Number of function(1-18): ")
 Run_2.runner_2(n)
 n = input("Enter some function(1-18): ")
