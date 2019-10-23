@@ -1,23 +1,41 @@
+def get_range(lst):
+    result = list()
+    result.append(lst[0])
+    for i in lst[1:]:
+        if i - result[-1] == 1:
+
+            if len(result) == 1:
+                result.append(i)
+
+            elif len(result) == 2:
+                result[-1] = i
+
+        else:
+            print('-'.join(map(str, result)), end=', ')
+            result.clear()
+            result.append(i)
+
+    print('-'.join(map(str, result)))
 
 
+get_range([0, 1, 2, 3, 4, 7, 8, 10])
 
-def decorator_with_arguments(func_to_decorate):
-    def wrapper_accepting(*args, **kwargs):
-        print("parameters: args{}  kwargs{}", args, kwargs)
-        func_to_decorate(*args, **kwargs)
-    return wrapper_accepting
 
-@decorator_with_arguments
-def function_without_arg():
-    print("without argument's")
+def get_range_1(lst_1):
+    res = []
+    res.append(lst_1[0])
+    for j in lst_1[1:]:
+        if j - res[-1] == 1:
+            res.append(j)
+        elif len(res) == 2:
+            res[-1] = j
+        else:
+            print('-'.join(map(str, res)), end=', ')
+            res.clear()
+            res.append(j)
+    print('-'.join(map(str, res)))
 
-function_without_arg()
-
-@decorator_with_arguments
-def function_with_arg(a, b, c):
-    print(a, b, c)
-
-function_with_arg(5, 4, 3)
+get_range_1([0, 1, 2, 3, 4, 7, 8, 10])
 
 
 

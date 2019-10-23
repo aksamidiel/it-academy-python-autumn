@@ -1,22 +1,24 @@
+from operator import eq
 
-def long_word():
-    phrase = input("Please enter some phrase with signs separated by space: ")
-    def l_word(ph):
-        word = ''
-        print("Entered phrase: ", ph)
-        signs = '.,/:;&^%$#@!><+=_-*'
-        for j in signs:  # поиск и замена символов
-            ph = ph.replace(j, '')
 
-        list_word = ph.split()
-        length_some_word = len(list_word[-1])
-        for i in range(1, len(list_word)):
-            if length_some_word < len(list_word[i]):
-                length_some_word = len(list_word[i])
-                word = list_word[i]
+def getRanges(lst):
+    mass = [[lst[0]]*2]
+    for x in lst[1:]:
+        if x == mass[-1][-1] + 1:
+            mass[-1][-1] = x
+        else:
+            mass += [[x]*2]
+            print(mass)
+    print(','.join((str(i[0])
+                    if eq(*i)
+                    else
+                    '-'.join(map(str, i))
+                    for i in mass)))
 
-        return "This is longest word in phrase: {}".format(word)
 
-    print(l_word(phrase))
-
-long_word()
+some_string_1 = [0, 1, 2, 3, 4, 7, 8, 10]
+getRanges(some_string_1)
+some_string_2 = [4, 7, 10]
+getRanges(some_string_2)
+some_string_3 = [2, 3, 8, 9]
+getRanges(some_string_3)
