@@ -24,10 +24,12 @@ with open("ratings.list", encoding="ISO-8859-1") as film_rating_list:
     film_rang = list(map(float, film_rang))  # rang
     print(film_rang)
 
-    film_description = [elem[3] for elem in film_list]  # description(name+year)
+    # description(name+year)
+    film_description = [elem[3] for elem in film_list]
     print(film_description)
 
-    film_name = [elem[-1].strip('(1234567890)/I ') for elem in film_list]  # description
+    # description
+    film_name = [elem[-1].strip('(1234567890)/I ') for elem in film_list]
     print(film_name)
 
     film_list = [elem.split(" ") for elem in film]

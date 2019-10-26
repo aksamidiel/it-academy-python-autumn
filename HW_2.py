@@ -77,6 +77,7 @@ def up_low():
             else:
                 pass
 
-        return "Number of lower letter: {} Number of upper letter: {} ".format(m, u)
+        return "Number of lower letter: " \
+               "{} Number of upper letter: {} ".format(m, u)
 
     print(up_lo_letter(phrase))
