@@ -14,10 +14,6 @@ def save_func(dec_fun):
     return wrapper
 
 
-
-
-
-
 # stepic.org tasks
 #
 # нужно написать программу, которая считывает строку и заменяет
@@ -58,6 +54,7 @@ def simple_input():
 
 def roma_num_input():
     s = input("Please enter some Roma number: ")
+
     @save_func
     def roma_func(some_string):
         roma_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000, }
@@ -86,6 +83,7 @@ def roma_num_input():
 
 def simple_math_sight():
     some_expression = str(input("Enter some simple expression: [a operator b]: "))
+
     @save_func
     def func_some_exp(some_ex):
         exp_list = some_ex.split(' ')
@@ -125,6 +123,7 @@ def simple_math_sight():
 
 def simple_converter():
     text = input("Enter some text: ")
+
     @save_func
     def text_converter(txt):
         txt.split("_")
@@ -142,6 +141,7 @@ def simple_converter():
 # число его повторений (без учёта регистра).
 def simple_rep():
     some_str = input("Enter some text: ")
+
     @save_func
     def rep_word(s_st):
         text_list = []

@@ -1,13 +1,16 @@
 from datetime import datetime
 import locale
+
 locale.setlocale(locale.LC_ALL, "ru")
+
 
 def save_func(dec_fun):
     def wrapper(*args, **kwargs):
         return_inf = dec_fun(*args, **kwargs)
         with open("save_fun.txt", "a") as f_obj:
-            f_obj.write(str(datetime.now()) + "\n" + return_inf+"\n")
+            f_obj.write(str(datetime.now()) + "\n" + return_inf + "\n")
         print(return_inf)
+
     return wrapper
 
 
@@ -30,13 +33,13 @@ def range_calc():
             print("Try input")
             break
 
-
     def dict_cons(n):
         dic_ = {x: x * x for x in range(1, n + 1)}
         return dic_
 
     res = dict_cons(n)
     return "Result: {}".format(res)
+
 
 # task_1.2
 # Define a code which count and return
@@ -53,6 +56,7 @@ def simple_dict_const():
 
     print(dict_const(some_string))
 
+
 # Задача. Дан текст (строк может быть много, разделенных \n).
 # Выведите слово, которое в этом тексте встречается чаще всего.
 # Если таких слов несколько, выведите то, которое меньше в
@@ -61,6 +65,7 @@ def simple_dict_const():
 
 def spl_search():
     some_text = input("Enter some text: ").split()
+
     @save_func
     def search_num_word(s_t):
         s_t = [line.rstrip() for line in s_t]
@@ -72,6 +77,7 @@ def spl_search():
 
     search_num_word(some_text)
 
+
 # Даны два списка чисел.
 # Посчитайте, сколько чисел содержится одновременно
 # как в первом списке, так и во втором.
@@ -80,6 +86,7 @@ def spl_search():
 def tw_l():
     list_l1 = input("Enter list of numbers 1: ")
     list_l2 = input("Enter list of numbers 2: ")
+
     @save_func
     def two_list(l1, l2):
         et_list_l1 = set(l1)
@@ -89,6 +96,7 @@ def tw_l():
 
     print(two_list(list_l1, list_l2))
 
+
 # Даны два списка чисел. Посчитайте,
 # сколько чисел входит только в один из этих списков.
 
@@ -96,6 +104,7 @@ def tw_l():
 def tw_dif():
     list_l1 = input("Enter list of numbers 1: ")
     list_l2 = input("Enter list of numbers 2: ")
+
     @save_func
     def two_list_dif(l1, l2):
         et_list_l1 = set(l1)
