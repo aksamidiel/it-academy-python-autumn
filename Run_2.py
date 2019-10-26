@@ -1,4 +1,4 @@
-import HW_1, HW_1_addon, HW_2, HW_3, HW_4, HW_4
+import HW_1, HW_1_addon, HW_2, HW_3, HW_4
 
 
 def runner_2(num):
@@ -40,5 +40,3 @@ def runner_2(num):
         HW_4.tw_dif()
     else:
         print("Not operation")
-
-
