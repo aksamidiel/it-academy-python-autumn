@@ -1,4 +1,6 @@
-import Run_1, Run_2, Run_3
+import Run_1
+import Run_2
+import Run_3
 # Оформите решение задач из прошлых домашних работ в функции. Напишите функцию runner.
 # runner() – все фукнции вызываются по очереди
 # runner(‘gen_numbers’) – вызывается только функцию gen_numbers.
