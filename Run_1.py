@@ -1,4 +1,8 @@
-import HW_1, HW_1_addon, HW_2, HW_3, HW_4
+import HW_1
+import HW_1_addon
+import HW_2
+import HW_3
+import HW_4
 
 
 def runner_1():

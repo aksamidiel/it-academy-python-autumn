@@ -11,7 +11,7 @@ with open("ratings.list", encoding="ISO-8859-1") as film_rating_list:
         else:
             i += 1
 
-    film_list = [elem.lstrip(" "*6) for elem in film]
+    film_list = [elem.lstrip(" " * 6) for elem in film]
     film_list = [elem.split("  ") for elem in film]
     film_distribution = [elem[0] for elem in film_list]  # distribution
     print(film_distribution)
@@ -34,14 +34,6 @@ with open("ratings.list", encoding="ISO-8859-1") as film_rating_list:
     film_year = [elem[-1].strip('()/I') for elem in film_list]  # year
     film_year = list(map(int, film_year))
     print(film_year)
-
-
-
-
-
-
-
-
 
 with open('top250.txt', 'w', encoding='UTF-8') as top_films:
     data = '\n'.join(film_description)
