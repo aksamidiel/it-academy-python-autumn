@@ -72,7 +72,8 @@ def spl_search():
         dict_res = dict((word, some_text.count(word)) for word in set(s_t))
         print(dict_res)
 
-        sort_res = sorted(dict_res.items(), key=lambda i: (-i[1], i[0]))[0]  # tuple
+        sort_res = sorted(dict_res.items(),
+                          key=lambda i: (-i[1], i[0]))[0]  # tuple
         return "Result sorted: {}".format(sort_res[0])
 
     search_num_word(some_text)

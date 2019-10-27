@@ -63,6 +63,7 @@ def sm_print():
 
 def test_list_comp():
     lst_1 = [a + b for a in ['a', 'b'] for b in ['b', 'c', 'd']]
+
     @save_func
     def const_comp_0():
         print("create list with list comprehension ")
@@ -72,6 +73,7 @@ def test_list_comp():
         return "Result: {}".format(lst_0)
 
     const_comp_0()
+
     @save_func
     def const_comp_1():
         lst_1 = [a + b for a in ['a', 'b'] for b in ['b', 'c', 'd']]
@@ -80,12 +82,14 @@ def test_list_comp():
         return "Result: {}".format(lst_1)
 
     const_comp_1()
+
     @save_func
     def const_comp_2(lst_1):
         lst_2 = lst_1[::2]
         return "Result :{}".format(lst_2)
 
     const_comp_2(lst_1)
+
     @save_func
     def const_comp_3():
         lst_2 = [[str(i) + 'a'] for i in range(1, 5)]

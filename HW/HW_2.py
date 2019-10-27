@@ -1,13 +1,16 @@
 from datetime import datetime
 import locale
+
 locale.setlocale(locale.LC_ALL, "ru")
+
 
 def save_func(dec_fun):
     def wrapper(*args, **kwargs):
         return_inf = dec_fun(*args, **kwargs)
         with open("save_fun.txt", "a") as f_obj:
-            f_obj.write(str(datetime.now()) + "\n" + return_inf+"\n")
+            f_obj.write(str(datetime.now()) + "\n" + return_inf + "\n")
         print(return_inf)
+
     return wrapper
 
 
@@ -16,6 +19,7 @@ def save_func(dec_fun):
 
 def long_word():
     phrase = input("Please enter some phrase with signs separated by space: ")
+
     @save_func
     def l_word(ph):
         word = ''
@@ -43,6 +47,7 @@ def long_word():
 
 def sym_deleter():
     phrase = input("Please enter simple phrase: ")
+
     @save_func
     def space_sym_deleter(ph):
         newPhrase = ''
@@ -59,6 +64,7 @@ def sym_deleter():
 
 def up_low():
     phrase = input("Please enter simple phrase: ")
+
     @save_func
     def up_lo_letter(ph):
         m = 0
@@ -71,6 +77,7 @@ def up_low():
             else:
                 pass
 
-        return "Number of lower letter: {} Number of upper letter: {} ".format(m, u)
+        return "Number of lower letter: " \
+               "{} Number of upper letter: {} ".format(m, u)
 
     print(up_lo_letter(phrase))
