@@ -1,4 +1,6 @@
-from RUN import Run_1, Run_2, Run_3
+from RUN import Run_1
+from RUN import Run_2
+from RUN import Run_3
 
 # Оформите решение задач из прошлых домашних работ в функции. Напишите функцию runner.
 # runner() – все фукнции вызываются по очереди
@@ -9,18 +11,3 @@ n = input("Number of function(1-18): ")
 Run_2.runner_2(n)
 n = input("Enter some function(1-18): ")
 Run_3.runner_3(n)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

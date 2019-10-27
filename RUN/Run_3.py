@@ -1,4 +1,8 @@
-from HW import HW_1, HW_1_addon, HW_2, HW_3, HW_4
+from HW import HW_1
+from HW import HW_1_addon
+from HW import HW_2
+from HW import HW_3
+from HW import HW_4
 
 
 def runner_3(elem):

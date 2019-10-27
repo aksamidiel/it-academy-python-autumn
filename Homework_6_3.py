@@ -2,12 +2,12 @@ from operator import eq
 
 
 def getRanges(lst):
-    mass = [[lst[0]]*2]
+    mass = [[lst[0]] * 2]
     for x in lst[1:]:
         if x == mass[-1][-1] + 1:
             mass[-1][-1] = x
         else:
-            mass += [[x]*2]
+            mass += [[x] * 2]
             print(mass)
     print(','.join((str(i[0])
                     if eq(*i)
