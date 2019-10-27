@@ -57,7 +57,8 @@ def roma_num_input():
 
     @save_func
     def roma_func(some_string):
-        roma_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000, }
+        roma_dict = {'I': 1, 'V': 5, 'X': 10,
+                     'L': 50, 'C': 100, 'D': 500, 'M': 1000, }
         dec_list = [roma_dict[index] for index in some_string]
         print(dec_list)
         for j in range(len(dec_list) - 1):
@@ -82,7 +83,8 @@ def roma_num_input():
 # умножения и целочисленного деления.
 
 def simple_math_sight():
-    some_expression = str(input("Enter some simple expression: [a operator b]: "))
+    some_expression = str(input("Enter some simple "
+                                "expression: [a operator b]: "))
 
     @save_func
     def func_some_exp(some_ex):
