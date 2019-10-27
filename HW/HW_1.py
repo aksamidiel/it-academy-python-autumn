@@ -2,14 +2,17 @@
 # task_1
 from datetime import datetime
 import locale
+
 locale.setlocale(locale.LC_ALL, "ru")
+
 
 def save_func(dec_fun):
     def wrapper(*args, **kwargs):
         return_inf = dec_fun(*args, **kwargs)
         with open("save_fun.txt", "a") as f_obj:
-            f_obj.write(str(datetime.now()) + "\n" + return_inf+"\n")
+            f_obj.write(str(datetime.now()) + "\n" + return_inf + "\n")
         print(return_inf)
+
     return wrapper
 
 
@@ -37,6 +40,7 @@ def input_calculate():
 # task v.2
 def input_palindrome():
     some_number = int(input("Enter some number: "))
+
     @save_func
     def is_pal(s_n):
         temp = s_n
@@ -59,6 +63,7 @@ def input_palindrome():
 # ряд фиббоначи начинается с 1
 def input_fib():
     n = int(input("Enter number of Fibonacci: "))
+
     @save_func
     def is_fib(number):
         num1 = num2 = 1
@@ -69,4 +74,5 @@ def input_fib():
             num2 = fib
             i += 1
         return "Number of Fibonacci: {}".format(num2)
+
     print(is_fib(n))
