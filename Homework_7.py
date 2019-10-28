@@ -198,8 +198,14 @@ class Booking(Hotel, Person):
         return res
 
 
-p = Person()
-print(dir(p))
+age = int(input("Enter age: "))
+name = str(input("Enter name: "))
+name_command = str(input("Enter name_command: "))
+sex = str(input("Enter sex: "))
+sport = str(input("Enter kind of sport: "))
+
+s = Sportsman(age, name, name_command, sex, sport)
+print(dir(s))
 
 h = Hotel()
 print(dir(h))
