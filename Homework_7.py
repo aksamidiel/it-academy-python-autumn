@@ -4,14 +4,14 @@
 # Objects should contain attributes and methods to simulate some use cases.
 # Completed program should print object states, it actions (methods) and objects interaction.
 
-class Person():
+class Person:
     def __init__(self):
         self.name = str(input("Enter name: "))
         self.age = int(input("Enter age: "))
         self.sex = str(input("Enter sex: "))
 
     def change_room(self):
-        self.num = int(input("Input number of room: "))
+        self.num = str(input("Input name of room: "))
         self.num_of_night = int(input("Enter night in hotel: "))
 
     def base_info(self):
@@ -22,59 +22,71 @@ class Person():
 
 class Buisnesman(Person):
 
-    def buisnesman_info(self):
+    def __init__(self):
+        Person.__init__(self)
         self.company = str(input("Enter company: "))
         self.meeting_at_arrival = str(input("Place of met: "))
         self.special_requirements = str(input("Write special require: "))
         self.special_offers_info = {'company': self.company, 'met': self.meeting_at_arrival,
                                     'sp_req': self.special_requirements}
+        Person.change_room(self)
 
     def get_spec_info(self):
         return self.special_offers_info
 
+    def base_info(self):
+        self.person_info = {'name': self.name, 'age': self.age, 'sex': self.sex,
+                            'num': self.num, 'num_of_night': self.num_of_night}
+        return self.person_info
+
+
 class Sportsman(Person):
     def __init__(self):
         Person.__init__(self)
-        self.name_command = str(input('name_command: '))
-        self.kind_sport = str(input('kind_sport: '))
         self.rent_sport_places = str(input("Place of sport_place: "))
         self.inventory = str(input("Enter inventory: "))
 
-        self.spec_sport_info = {'name_command': self.name_command, 'kind_sport': self.kind_sport,
-                                'rent': self.rent_sport_places, 'inventory': self.inventory}
+        self.spec_offers_info = {'rent': self.rent_sport_places,
+                                 'inventory': self.inventory}
+        Person.change_room(self)
 
-    def display_sportsman_info(self):
+    def base_info(self):
+        self.person_info = {'name': self.name, 'age': self.age, 'sex': self.sex,
+                            'num': self.num, 'num_of_night': self.num_of_night}
         return self.person_info
 
-    def display_spec_sportsman_info(self):
-        return self.spec_sport_info
+    def get_spec_info(self):
+        return self.spec_offers_info
 
 
 class Hotel:
     def __init__(self):
-        self.name_of_hotel = str(input("Hotel name: "))
-        self.room = str(input('Input number of room: '))
-        self.level = int(input('Level of hotel: '))
-
-    #  self.season = int(input("Enter a season: 1-summer, 2-autumn, 3-winter, 4-spring: "))
+        self.name = str(input("Enter name of hotel: "))
+        self.rang = int(input("Enter stars of hotel: "))
+        self.base_info = {'Name': self.name, 'Rang': self.rang}
 
     prices_room = {"room_1": 100,
                    "room_2": 110,
                    "room_3": 150,
-                   "room_4": 200}
+                   "room_4": 200,
+                   "room_5": 115,
+                   "room_6": 110,
+                   "room_7": 150,
+                   "room_8": 140
+                   }
 
-    facilities_room = {"room_1": "hot_tube",
-                       "room_2": "mini_bar",
-                       "room_3": "mini_bar",
-                       "room_4": "massage_room"
-                       }
+    def select_room(self, prices_room):
+        room = str(input("Select the room: "))
+        select_room = prices_room.get(room, "Unknown_room")
+        print("Select {}, price: {}".format(room, select_room))
 
     def add_new_room(self, prices_room):
         name = str(input("Enter name of room: "))
         base_price = int(input("Enter price: "))
         new_room = {name: base_price}
         prices_room.update(new_room)
-        print("New room: {}, price: {}", name, base_price)
+        print("New room: {}, price: {}".format(name, base_price))
+        return prices_room
 
     # change base price of room
     def update_base_price(self):
@@ -82,18 +94,9 @@ class Hotel:
         price = int(input("Enter new price: "))
 
         for key in self.prices_room.keys():
-            if key[-3:] == room:
+            if key == room:
                 self.prices_room.update({key: price})
         return self.prices_room
-
-    def update_facilities(self):
-        name = str(input("Enter name of room: "))
-        facilities = int(input("Enter facilities: "))
-
-        for key in self.facilities_room.keys():
-            if key[-3:] == name:
-                self.prices_room.update({key: facilities})
-        return self.facilities_room
 
     def change_season_price(self):
         season = int(input("Enter a season: 1-summer, 2-autumn, 3-winter, 4-spring: "))
@@ -119,49 +122,17 @@ class Hotel:
         return changes(season)
 
     def display_info(self):
-        hotel_info = {'Room': Hotel.room,
-                      'name_of_hotel': Hotel.name_of_hotel,
-                      'level': Hotel.level,
-                      'parking': Hotel.parking
-                      }
-
-        # print("Some info about person: ", self.room, self.name_of_hotel, self.level, self.parking)
-        return hotel_info
+        return self.base_info
 
 
-class Booking(Hotel, Person):
-
-    def booking_room(self):
-        facilities = self.get_info["facilities_room"]
-        nights = self.get_info['num_of_night']
-        room = self.get_info["room"]
-
-        for key in Hotel.prices_room.keys():
-            if str(room) == key[-3:]:
-                end_price = Hotel.prices_room[key] * nights
-                print("Price: {}", end_price)
-                return "Total: {end_price} $".format(end_price=end_price)
-
-        for key in Hotel.facilities_room.keys():
-            if str(facilities) == key[-3:]:
-                fac = Hotel.facilities_room[key]
-                print("Facilities: {}", fac)
-                return "Facilities in room: {fac} $".format(fac=fac)
-
-    def print_order(self):
-        res = Booking.booking_room(self)
-        result = "{} you order room: {} with {} facilities".format(self.get_info['name'],
-                                                                   self.get_info['room'],
-                                                                   self.get_info['facilities'])
-
-        res += result
-        return res
-
+b = Buisnesman()
+print(b.base_info())
+print(b.get_spec_info())
 
 s = Sportsman()
-print(dir(s))
-h = Hotel()
-print(h.change_season_price())
-b1 = Booking()
+print(s.base_info())
+print(s.get_spec_info())
 
-print(b1.print_order())
+h = Hotel()
+sel = h.change_season_price()
+print(sel)
