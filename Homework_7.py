@@ -9,38 +9,28 @@ class Person():
         self.name = str(input("Enter name: "))
         self.age = int(input("Enter age: "))
         self.sex = str(input("Enter sex: "))
-        self.num = str(input("Input number of room: "))
+
+    def change_room(self):
+        self.num = int(input("Input number of room: "))
         self.num_of_night = int(input("Enter night in hotel: "))
-        self.person_info = {'name': self.name, 'age': self.age, 'sex': self.sex,
-                            'num': self.num, 'num_of_night': self.num_of_night}
 
     def base_info(self):
+        self.person_info = {'name': self.name, 'age': self.age, 'sex': self.sex,
+                            'num': self.num, 'num_of_night': self.num_of_night}
         return self.person_info
 
 
 class Buisnesman(Person):
-    def __init__(self):
-        Person.__init__(self)
 
+    def buisnesman_info(self):
         self.company = str(input("Enter company: "))
         self.meeting_at_arrival = str(input("Place of met: "))
         self.special_requirements = str(input("Write special require: "))
         self.special_offers_info = {'company': self.company, 'met': self.meeting_at_arrival,
                                     'sp_req': self.special_requirements}
 
-        self.visit_purpose = str(input("Enter visit purpose: "))
-        self.income = int(input("Enter money income of person($): "))
-        self.change_person_info = {'visit': self.visit_purpose, 'income': self.income}
-
-    def display_buisnesman_info(self):
-        return self.person_info
-
-    def display_spec_info(self):
+    def get_spec_info(self):
         return self.special_offers_info
-
-    def display_change_info(self):
-        return self.change_person_info
-
 
 class Sportsman(Person):
     def __init__(self):
@@ -65,7 +55,8 @@ class Hotel:
         self.name_of_hotel = str(input("Hotel name: "))
         self.room = str(input('Input number of room: '))
         self.level = int(input('Level of hotel: '))
-      #  self.season = int(input("Enter a season: 1-summer, 2-autumn, 3-winter, 4-spring: "))
+
+    #  self.season = int(input("Enter a season: 1-summer, 2-autumn, 3-winter, 4-spring: "))
 
     prices_room = {"room_1": 100,
                    "room_2": 110,
