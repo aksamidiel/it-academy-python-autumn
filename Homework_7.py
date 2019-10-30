@@ -1,8 +1,9 @@
-# Create simulator from real life.
-# This can be booking room in hotel, visit to casino, visit to bar.
-# Create 3-4 objects, that can describe situation.
-# Objects should contain attributes and methods to simulate some use cases.
-# Completed program should print object states, it actions (methods) and objects interaction.
+"""Create simulator from real life.
+This can be booking room in hotel, visit to casino, visit to bar.
+Create 3-4 objects, that can describe situation.
+Objects should contain attributes and methods to simulate some use cases.
+Completed program should print object states, it actions (methods) and objects interaction."""
+
 class Person(object):
     def __init__(self):
         self.name = str(input("Enter name: "))
@@ -17,7 +18,6 @@ class Person(object):
         self.person_info = {'name': self.name, 'age': self.age, 'sex': self.sex,
                             'num': self.num, 'num_of_night': self.num_of_night}
         return self.person_info
-
 
 class Buisnesman(Person):
 
