@@ -2,7 +2,8 @@
 This can be booking room in hotel, visit to casino, visit to bar.
 Create 3-4 objects, that can describe situation.
 Objects should contain attributes and methods to simulate some use cases.
-Completed program should print object states, it actions (methods) and objects interaction."""
+Completed program should print object states,
+it actions (methods) and objects interaction."""
 
 class Person(object):
     def __init__(self):
@@ -15,8 +16,11 @@ class Person(object):
         self.num_of_night = int(input("Enter night in hotel: "))
 
     def base_info(self):
-        self.person_info = {'name': self.name, 'age': self.age, 'sex': self.sex,
-                            'num': self.num, 'num_of_night': self.num_of_night}
+        self.person_info = {'name': self.name,
+                            'age': self.age, 'sex': self.sex,
+                            'num': self.num,
+                            'num_of_night': self.num_of_night}
+
         return self.person_info
 
 class Buisnesman(Person):
@@ -26,7 +30,8 @@ class Buisnesman(Person):
         self.company = str(input("Enter company: "))
         self.meeting_at_arrival = str(input("Place of met: "))
         self.special_requirements = str(input("Write special require: "))
-        self.special_offers_info = {'company': self.company, 'met': self.meeting_at_arrival,
+        self.special_offers_info = {'company': self.company,
+                                    'met': self.meeting_at_arrival,
                                     'sp_req': self.special_requirements}
         Person.change_room(self)
 
@@ -34,8 +39,11 @@ class Buisnesman(Person):
         return self.special_offers_info
 
     def base_info(self):
-        self.person_info = {'name': self.name, 'age': self.age, 'sex': self.sex,
-                            'num': self.num, 'num_of_night': self.num_of_night}
+        self.person_info = {'name': self.name,
+                            'age': self.age,
+                            'sex': self.sex,
+                            'num': self.num,
+                            'num_of_night': self.num_of_night}
         return self.person_info
 
 
@@ -50,8 +58,11 @@ class Sportsman(Person):
         Person.change_room(self)
 
     def base_info(self):
-        self.person_info = {'name': self.name, 'age': self.age, 'sex': self.sex,
-                            'num': self.num, 'num_of_night': self.num_of_night}
+        self.person_info = {'name': self.name,
+                            'age': self.age,
+                            'sex': self.sex,
+                            'num': self.num,
+                            'num_of_night': self.num_of_night}
         return self.person_info
 
     def get_spec_info(self):
@@ -98,7 +109,8 @@ class Hotel(object):
         return self.prices_room
 
     def change_season_price(self):
-        season = int(input("Enter a season: 1-summer, 2-autumn, 3-winter, 4-spring: "))
+        season = int(input("Enter a season: 1-summer, "
+                           "2-autumn, 3-winter, 4-spring: "))
 
         def changes(seas):
             if seas == 1:
