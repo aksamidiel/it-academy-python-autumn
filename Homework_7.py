@@ -3,8 +3,7 @@
 # Create 3-4 objects, that can describe situation.
 # Objects should contain attributes and methods to simulate some use cases.
 # Completed program should print object states, it actions (methods) and objects interaction.
-
-class Person:
+class Person(object):
     def __init__(self):
         self.name = str(input("Enter name: "))
         self.age = int(input("Enter age: "))
@@ -59,7 +58,7 @@ class Sportsman(Person):
         return self.spec_offers_info
 
 
-class Hotel:
+class Hotel(object):
     def __init__(self):
         self.name = str(input("Enter name of hotel: "))
         self.rang = int(input("Enter stars of hotel: "))
