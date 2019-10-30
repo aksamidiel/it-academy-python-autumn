@@ -85,7 +85,6 @@ class Hotel:
                 self.prices_room.update({key: price})
         return self.prices_room
 
-    def
 
     def change_season_price(self):
         season = int(input("Enter a season: 1-summer, 2-autumn, 3-winter, 4-spring: "))
@@ -111,14 +110,10 @@ class Hotel:
         return changes(season)
 
     def display_info(self):
-        hotel_info = {'Room': self.room,
-                      'name_of_hotel': self.name_of_hotel,
-                      'level': self.level,
-                      'parking': self.parking
+        hotel_info = {'Room': self.name,
+                      'rang': self.rang
                       }
-
-        # print("Some info about person: ", self.room, self.name_of_hotel, self.level, self.parking)
-        return self.hotel_info
+        return self.base_info
 
 
 #b = Buisnesman()
