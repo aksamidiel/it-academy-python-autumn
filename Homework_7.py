@@ -165,7 +165,8 @@ def create_lodger(lodger, hotel):
     if lodger == '1':
         b = Buisnesman()
         if b.base_info()['name_room'] in hotel.keys():
-            our_cost = hotel.get(b.base_info()['name_room'], "None") * b.base_info()['num_of_night']
+            our_cost = hotel.get(b.base_info()['name_room'], "None") *\
+                       b.base_info()['num_of_night']
 
             print("Guest {} in {} cost {}".
                   format(b.base_info()['name'],
@@ -176,7 +177,8 @@ def create_lodger(lodger, hotel):
     elif lodger == '2':
         b = Sportsman()
         if b.base_info()['name_room'] in hotel.keys():
-            our_cost = hotel.get(b.base_info()['name_room'], "None") * b.base_info()['num_of_night']
+            our_cost = hotel.get(b.base_info()['name_room'], "None") * \
+                       b.base_info()['num_of_night']
 
             print("Guest {} in {} cost {}".
                   format(b.base_info()['name'],
@@ -190,7 +192,7 @@ def create_lodger(lodger, hotel):
         print(b.base_info())
 
 
-class Booking():
+class Booking(object):
     print("Create Hotel: ")
     h = create_hotel()
     print("Create lodger: ")
