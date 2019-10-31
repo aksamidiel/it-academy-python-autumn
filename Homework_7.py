@@ -5,6 +5,7 @@ Objects should contain attributes and methods to simulate some use cases.
 Completed program should print object states,
 it actions (methods) and objects interaction."""
 
+
 class Person(object):
     def __init__(self):
         self.name = str(input("Enter name: "))
@@ -12,19 +13,19 @@ class Person(object):
         self.sex = str(input("Enter sex: "))
 
     def change_room(self):
-        self.num = str(input("Input name of room: "))
+        self.name_room = str(input("Input name of room: "))
         self.num_of_night = int(input("Enter night in hotel: "))
 
     def base_info(self):
         self.person_info = {'name': self.name,
                             'age': self.age, 'sex': self.sex,
-                            'num': self.num,
+                            'name_room': self.name_room,
                             'num_of_night': self.num_of_night}
 
         return self.person_info
 
-class Buisnesman(Person):
 
+class Buisnesman(Person):
     def __init__(self):
         Person.__init__(self)
         self.company = str(input("Enter company: "))
@@ -42,7 +43,7 @@ class Buisnesman(Person):
         self.person_info = {'name': self.name,
                             'age': self.age,
                             'sex': self.sex,
-                            'num': self.num,
+                            'name_room': self.name_room,
                             'num_of_night': self.num_of_night}
         return self.person_info
 
@@ -61,7 +62,7 @@ class Sportsman(Person):
         self.person_info = {'name': self.name,
                             'age': self.age,
                             'sex': self.sex,
-                            'num': self.num,
+                            'name_room': self.name_room,
                             'num_of_night': self.num_of_night}
         return self.person_info
 
@@ -84,6 +85,9 @@ class Hotel(object):
                    "room_7": 150,
                    "room_8": 140
                    }
+
+    def info_room(self):
+        return self.prices_room
 
     def select_room(self, prices_room):
         room = str(input("Select the room: "))
@@ -136,14 +140,62 @@ class Hotel(object):
         return self.base_info
 
 
-b = Buisnesman()
-print(b.base_info())
-print(b.get_spec_info())
+def create_hotel():
+    h = Hotel()
+    sel = h.change_season_price()
+    print(sel)
+    op = str(input("1-create new room 2-update room"))
 
-s = Sportsman()
-print(s.base_info())
-print(s.get_spec_info())
+    def operation():
+        if op == '1':
+            res = h.add_new_room(h.info_room())
+        elif op == '2':
+            res = h.update_base_price()
+        else:
+            print("No operation")
+            res = h.info_room()
 
-h = Hotel()
-sel = h.change_season_price()
-print(sel)
+        return res
+
+    print(operation())
+    return operation()
+
+
+def create_lodger(lodger, hotel):
+    if lodger == '1':
+        b = Buisnesman()
+        if b.base_info()['name_room'] in hotel.keys():
+            our_cost = hotel.get(b.base_info()['name_room'], "None") * b.base_info()['num_of_night']
+
+            print("Guest {} in {} cost {}".
+                  format(b.base_info()['name'],
+                         b.base_info()['name_room'],
+                         our_cost))
+        # print(b.get_spec_info())
+
+    elif lodger == '2':
+        b = Sportsman()
+        if b.base_info()['name_room'] in hotel.keys():
+            our_cost = hotel.get(b.base_info()['name_room'], "None") * b.base_info()['num_of_night']
+
+            print("Guest {} in {} cost {}".
+                  format(b.base_info()['name'],
+                         b.base_info()['name_room'],
+                         our_cost))
+        # print(b.base_info())
+        # print(b.get_spec_info())
+
+    else:
+        b = Person()
+        print(b.base_info())
+
+
+class Booking():
+    print("Create Hotel: ")
+    h = create_hotel()
+    print("Create lodger: ")
+    lodger = input("Enter lodger: 1->Businessman 2->Sportsman : ")
+    create_lodger(lodger, h)
+
+
+b = Booking()
