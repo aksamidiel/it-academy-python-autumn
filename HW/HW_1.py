@@ -17,7 +17,7 @@ def save_func(dec_fun):
 
 
 def input_calculate():
-    rub = int(input('Enter cost in rub(please use whole number: '))
+    rub = int(input('Enter cost in rub(please use whole number): '))
     coins = int(input('Enter cost in coins(please use whole number <100 : '))
     number_of_items = int(input("Input number of item: "))
 

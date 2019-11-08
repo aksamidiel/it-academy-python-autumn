@@ -1,3 +1,9 @@
 
 2019-10-23 20:42:37.021344
 Number in dec system: 15
+2019-11-08 16:47:12.636112
+Our cost: rub = 736  coins = 69 item = 23
+2019-11-08 16:47:15.388224
+Number of Fibonacci: 2178309
+2019-11-08 16:47:21.510315
+This number is palindrome: 232
