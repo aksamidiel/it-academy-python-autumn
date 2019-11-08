@@ -14,6 +14,7 @@ while True:
         print("Try input")
         break
 
+
 def dict_cons(n):
     dic_ = {x: x * x for x in range(1, n + 1)}
     return dic_
@@ -28,7 +29,8 @@ print("Result: ", res)
 
 some_string = input("Enter some string: ")
 print(some_string)
-dict_res = {dict_res: some_string.count(dict_res) for dict_res in set(some_string)}
+dict_res = {dict_res: some_string.count(dict_res)
+            for dict_res in set(some_string)}
 print("Result", dict_res)
 
 # Задача. Дан текст (строк может быть много, разделенных \n).
