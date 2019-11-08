@@ -12,4 +12,3 @@ for key in dict_res.keys():
         max_lst.append(key)
 max_lst = sorted(max_lst)
 print("Result sorted: ", max_lst[0])
-
