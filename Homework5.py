@@ -29,7 +29,7 @@ print("Result: ", res)
 
 some_string = input("Enter some string: ")
 print(some_string)
-dict_res = dict((ch, some_string.count(ch)) for ch in set(some_string))
+dict_res = {dict_res: some_string.count(dict_res) for dict_res in set(some_string)}
 print("Result", dict_res)
 
 # Задача. Дан текст (строк может быть много, разделенных \n).
@@ -38,14 +38,38 @@ print("Result", dict_res)
 # лексикографическом порядке.
 
 some_text = input("Enter some text: ").split()
-print(some_text)
 
-some_text = [line.rstrip() for line in some_text]
-dict_res = dict((word, some_text.count(word)) for word in set(some_text))
+dict_res = {}
+for word in some_text:
+    dict_res[word] = dict_res.get(word, 0) + 1
 print(dict_res)
 
-sort_res = sorted(dict_res.items(), key=lambda i: (-i[1], i[0]))[0]   # tuple
-print("Result sorted: ", sort_res[0])
+max_lst = []
+m_word_in_text = max(dict_res.values())
+for key in dict_res.keys():
+    if dict_res[key] == m_word_in_text:
+        max_lst.append(key)
+max_lst = sorted(max_lst)
+print("Result sorted: ", max_lst[0])
+
+# Задача Дан список стран и городов каждой страны.
+# Затем даны названия городов.
+# Для каждого города укажите, в какой стране он находится.
+
+num = input('Enter the number of countries: ')
+county_with_cities = {}
+for i in range(num):
+    country, *cities = input('Enter country and some cities: ').split()
+    for city in cities:
+        county_with_cities[city] = country
+
+number = int(input('Enter count cities? which you want to see: '))
+city_list = []
+for i in range(number):
+    print('Enter city: ')
+    city_list.append(input())
+for city in city_list:
+    print(county_with_cities.get(city, 'the city is not listed'))
 
 # Даны два списка чисел.
 # Посчитайте, сколько чисел содержится одновременно
