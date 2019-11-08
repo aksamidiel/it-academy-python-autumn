@@ -14,7 +14,6 @@ while True:
         print("Try input")
         break
 
-
 def dict_cons(n):
     dic_ = {x: x * x for x in range(1, n + 1)}
     return dic_
