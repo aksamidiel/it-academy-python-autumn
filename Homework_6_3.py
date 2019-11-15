@@ -1,19 +1,20 @@
-from operator import eq
+# Реализовать функцию get_ranges,
+# которая получает на вход непустой список неповторяющихся целых чисел,
+# отсортированных по возрастанию, которая этот список “сворачивает”
+# get_ranges([0, 1, 2, 3, 4, 7, 8, 10]) // "0-4,7-8,10"
+# get_ranges([4,7,10]) // "4,7,10"
+# get_ranges([2, 3, 8, 9]) // "2-3,8-9"
 
 
 def getRanges(lst):
-    mass = [[lst[0]] * 2]
-    for x in lst[1:]:
-        if x == mass[-1][-1] + 1:
-            mass[-1][-1] = x
-        else:
-            mass += [[x] * 2]
-            print(mass)
-    print(','.join((str(i[0])
-                    if eq(*i)
-                    else
-                    '-'.join(map(str, i))
-                    for i in mass)))
+    diap = ''
+    for elm in range(len(lst) - 1):
+        if lst[elm] + 1 == lst[elm + 1] and lst[elm] - 1 != lst[elm - 1]:
+            diap += '{}-'.format(lst[elm])
+        elif lst[elm] + 1 != lst[elm + 1]:
+            diap += '{},'.format(lst[elm])
+    diap += str(lst[-1])
+    print(diap)
 
 
 some_string_1 = [0, 1, 2, 3, 4, 7, 8, 10]
